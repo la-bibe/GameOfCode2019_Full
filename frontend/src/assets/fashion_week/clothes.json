@@ -12,24 +12,24 @@
       "parts": [
         {
           "path": "Pants/Blue1/pantsBlue1_short.png",
-          "size": {
-            "x": 0.5,
-            "y": 1
-          },
           "pos": {
-            "x": 0.5,
+            "x": 0,
             "y": 0
+          },
+          "size": {
+            "x": -0.5,
+            "y": 1
           }
         },
         {
           "path": "Pants/Blue1/pantsBlue1_short.png",
           "pos": {
-            "x": -0.5,
-            "y": 1
+            "x": 0.5,
+            "y": 0
           },
           "size": {
-            "x": 0,
-            "y": 0
+            "x": 0.5,
+            "y": 1
           }
         },
         {
