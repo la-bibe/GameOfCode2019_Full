@@ -9,15 +9,9 @@
         "x": 0,
         "y": 0
       },
-      "partsPaths": [
-        [
-          "Pants/Blue1/pantsBlue1_short.png",
-          "Pants/Blue1/pantsBlue1_short.png",
-          "Pants/Blue1/pantsBlue11.png"
-        ]
-      ],
-      "partsInfos": [
+      "parts": [
         {
+          "path": "Pants/Blue1/pantsBlue1_short.png",
           "pos": {
             "x": 0,
             "y": 0
@@ -28,6 +22,7 @@
           }
         },
         {
+          "path": "Pants/Blue1/pantsBlue1_short.png",
           "pos": {
             "x": 0.5,
             "y": 0
@@ -38,13 +33,14 @@
           }
         },
         {
+          "path": "Pants/Blue1/pantsBlue1_short.png",
           "pos": {
             "x": 0,
             "y": 0
           },
           "size": {
             "x": 1,
-            "y": 0.2
+            "y": 0.5
           }
         }
       ]
