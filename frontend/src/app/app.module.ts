@@ -15,7 +15,7 @@ import { OrderByScorePipe } from './order-by-score.pipe';
     AppComponent,
     MainMenuComponent,
     FashionWeekComponentComponent,
-    FashionScrollComponent
+    FashionScrollComponent,
     LoginComponent,
     SpectateComponent,
     UserComponent,
