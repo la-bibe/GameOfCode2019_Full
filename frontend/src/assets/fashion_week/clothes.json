@@ -31,16 +31,107 @@
             "x": 0.5,
             "y": 1
           }
-        },
+        }
+      ]
+    },
+    {
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "x": 0,
+        "y": 0
+      },
+      "parts": [
         {
-          "path": "Pants/Blue1/pantsBlue1_short.png",
+          "path": "Pants/Blue1/pantsBlue1_long.png",
           "pos": {
             "x": 0,
             "y": 0
           },
           "size": {
-            "x": 1,
-            "y": 0.5
+            "x": -0.5,
+            "y": 1
+          }
+        },
+        {
+          "path": "Pants/Blue1/pantsBlue1_long.png",
+          "pos": {
+            "x": 0.5,
+            "y": 0
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1
+          }
+        }
+      ]
+    },
+    {
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "x": 0,
+        "y": 0
+      },
+      "parts": [
+        {
+          "path": "Pants/Blue2/pantsBlue2_short.png",
+          "pos": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "x": -0.5,
+            "y": 1
+          }
+        },
+        {
+          "path": "Pants/Blue2/pantsBlue2_short.png",
+          "pos": {
+            "x": 0.5,
+            "y": 0
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1
+          }
+        }
+      ]
+    },
+    {
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "x": 0,
+        "y": 0
+      },
+      "parts": [
+        {
+          "path": "Pants/Blue2/pantsBlue2_long.png",
+          "pos": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "x": -0.5,
+            "y": 1
+          }
+        },
+        {
+          "path": "Pants/Blue2/pantsBlue2_long.png",
+          "pos": {
+            "x": 0.5,
+            "y": 0
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1
           }
         }
       ]
