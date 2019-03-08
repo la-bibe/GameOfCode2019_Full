@@ -1,0 +1,6 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  height: 100vh;
+  font-family: 'Pacifico', cursive;
+}
