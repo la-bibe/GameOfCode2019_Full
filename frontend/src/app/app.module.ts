@@ -4,11 +4,13 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {MainMenuComponent} from './main-menu/main-menu.component';
 import {RouterModule} from '@angular/router';
+import { BoardGameComponent } from './board-game/board-game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    BoardGameComponent
   ],
   imports: [
     BrowserModule,
