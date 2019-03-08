@@ -1,0 +1,7 @@
+<div class="container-fluid text-center py-5 h-100">
+  <div class="d-flex flex-wrap justify-content-around align-items-center h-100">
+    <div class="col-6 col-sm-3" *ngFor="let user of users | orderByScore; let i = index">
+      <app-user [user]="user" [rank]="i + 1" class="my-5 d-inline"></app-user>
+    </div>
+  </div>
+</div>
