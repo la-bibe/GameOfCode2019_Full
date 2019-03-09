@@ -1,9 +1,8 @@
-
-<div class="text-center h-100 w-100">
-  <div class="d-inline-block image "
+<div class="text-center h-100">
+  <div class="image h-100 w-100 d-block"
        [style.background-image]="getBackground('assets/fashion_week/skin.png')">
   </div>
-  <div class="d-inline-block image"
+  <div class="image h-100 w-100"
        *ngFor="let image of drawables?.reverse()"
        [style.background-image]="getBackground(image)">
   </div>

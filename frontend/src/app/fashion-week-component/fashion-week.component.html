@@ -1,15 +1,16 @@
-<div class="w-100 h-100">
-  <div class="w-25 h-100 d-inline-block">
-    <div class="h-25 w-100 d-block" *ngFor="let clotheType of clothes; let i = index">
-      <app-arrow class="d-inline-block w-100 h-100" (clicked)="selectNext(i)"></app-arrow>-
+<div class="container h-100">
+  <div class="h-100 row d-flex align-items-center">
+    <div class="col-3 h-100 d-inline-flex justify-content-center align-content-end flex-column">
+      <app-arrow class="d-inline-block my-5 text-right" (clicked)="selectNext(i)"
+                 *ngFor="let _ of clothes; let i = index"></app-arrow>
     </div>
-  </div>
-  <div class="w-50 h-100 d-inline-block">
-    <app-fashion-draw class="w-100 h-100 d-inline-block" [drawables]="selectedClothes"></app-fashion-draw>
-  </div>
-  <div class="w-25 h-100 d-inline-block">
-    <div class="h-25 w-100 d-block" *ngFor="let clotheType of clothes; let i = index">
-      <app-arrow class="d-inline-block w-100 h-100" [left]="false" (clicked)="selectPrev(i)"></app-arrow>-
+    <div class="col-6 h-75">
+      <app-fashion-draw class="d-block" [drawables]="selectedClothes"></app-fashion-draw>
+    </div>
+    <div class="col-3 h-100 d-inline-flex justify-content-center align-items-start flex-column">
+      <div *ngFor="let _ of clothes; let i = index">
+        <app-arrow class="d-block my-5" [left]="false" (clicked)="selectPrev(i)"></app-arrow>
+      </div>
     </div>
   </div>
 </div>

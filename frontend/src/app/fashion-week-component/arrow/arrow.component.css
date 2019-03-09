@@ -1,5 +1,6 @@
 .image {
-  background-repeat:no-repeat;
-  background-size:contain;
-  background-position: center;
+  height: 2em;
+  width: 2em;
+  background-size: contain;
+  background: no-repeat center;
 }

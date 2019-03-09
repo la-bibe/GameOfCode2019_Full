@@ -18,6 +18,7 @@ import { VoteComponent } from './vote/vote.component';
 import { UserVoteComponent } from './vote/user-vote/user-vote.component';
 import { RacletteComponent } from './raclette/raclette.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { BoardDisplayComponent } from './board-game/board-display/board-display.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     VoteComponent,
     UserVoteComponent,
     RacletteComponent,
+    BoardDisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
   entryComponents: [
     FashionWeekComponent,
     BoardGameComponent,
-    FashionDrawComponent
+    FashionDrawComponent,
+    BoardDisplayComponent
   ]
 })
 export class AppModule {

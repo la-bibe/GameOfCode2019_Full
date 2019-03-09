@@ -1,10 +1,9 @@
+.bg {
+  min-height: 6em;
+}
+
 .image {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   position: absolute;
-  background-repeat:no-repeat;
   background-size:contain;
-  background-position: center;
+  background: no-repeat center;
 }

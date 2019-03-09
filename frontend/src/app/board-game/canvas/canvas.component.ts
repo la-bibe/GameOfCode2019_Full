@@ -1,8 +1,8 @@
 import {
   Component, Input, ElementRef, AfterViewInit, ViewChild
 } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
+import {fromEvent} from 'rxjs';
+import {switchMap, takeUntil, pairwise} from 'rxjs/operators';
 
 @Component({
   selector: 'app-canvas',
@@ -13,9 +13,12 @@ export class CanvasComponent implements AfterViewInit {
 
   @ViewChild('canvas') public canvas: ElementRef;
 
-   @Input() public width = 500;
-   @Input() public height = 500;
-   public color = 'black';
+  @Input() public drawable = false;
+  @Input() public width = 500;
+  @Input() public height = 500;
+  public color = 'black';
+
+  private data;
 
   private cx: CanvasRenderingContext2D;
 
@@ -30,24 +33,31 @@ export class CanvasComponent implements AfterViewInit {
     this.cx.lineCap = 'round';
     this.cx.strokeStyle = '#000';
 
+    if (this.data) {
+      const dat = new ImageData(this.data, this.width);
+      this.cx.putImageData(dat, 0, 0);
+    }
+
     this.clear();
-    this.initTouchEvent(canvasEl);
-    this.captureEvents(canvasEl);
+    if (this.drawable) {
+      this.initTouchEvent(canvasEl);
+      this.captureEvents(canvasEl);
+    }
   }
 
   public initTouchEvent(canvas: HTMLCanvasElement) {
     document.body.addEventListener('touchstart', function (e) {
-      if (e.target == canvas) {
+      if (e.target === canvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener('touchend', function (e) {
-      if (e.target == canvas) {
+      if (e.target === canvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener('touchmove', function (e) {
-      if (e.target == canvas) {
+      if (e.target === canvas) {
         e.preventDefault();
       }
     }, false);
@@ -87,8 +97,8 @@ export class CanvasComponent implements AfterViewInit {
     this.color = color;
   }
 
-public getData() {
-    return this.cx.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
+  public getData() {
+    return [this.canvas.nativeElement.toDataURL()];
   }
 
   private captureEvents(canvasEl: HTMLCanvasElement) {
@@ -130,7 +140,9 @@ public getData() {
   }
 
   private drawOnCanvas(prevPos: { x: number, y: number }, currentPos: { x: number, y: number }) {
-    if (!this.cx) { return; }
+    if (!this.cx) {
+      return;
+    }
 
     this.cx.fillStyle = this.color;
     this.cx.strokeStyle = this.color;

@@ -17,6 +17,6 @@ export class BoardGameComponent implements OnInit {
   }
 
   getData() {
-    this.canvas.getData();
+    return this.canvas.getData();
   }
 }
