@@ -65,12 +65,14 @@ export class CanvasComponent implements AfterViewInit {
 
     canvas.addEventListener('touchstart', function (e) {
       // const mousePos = getTouchPos(canvas, e);
-      const touch = e.touches[0];
-      const mouseEvent = new MouseEvent('mousedown', {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      canvas.dispatchEvent(mouseEvent);
+      if (e.target === canvas) {
+        const touch = e.touches[0];
+        const mouseEvent = new MouseEvent('mousedown', {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+      }
     }, false);
     canvas.addEventListener('touchend', function (e) {
       const mouseEvent = new MouseEvent('mouseup', {});
@@ -122,16 +124,17 @@ export class CanvasComponent implements AfterViewInit {
       )
       .subscribe((res: [MouseEvent, MouseEvent]) => {
         const rect = canvasEl.getBoundingClientRect();
+        const actual_size = {x: canvasEl.scrollWidth, y: canvasEl.scrollHeight};
 
         // previous and current position with the offset
         const prevPos = {
-          x: res[0].clientX - rect.left,
-          y: res[0].clientY - rect.top
+          x: (res[0].clientX - rect.left) * this.width / actual_size.x,
+          y: (res[0].clientY - rect.top) * this.height / actual_size.y
         };
 
         const currentPos = {
-          x: res[1].clientX - rect.left,
-          y: res[1].clientY - rect.top
+          x: (res[1].clientX - rect.left) * this.width / actual_size.x,
+          y: (res[1].clientY - rect.top) * this.height / actual_size.y
         };
 
         // this method we'll implement soon to do the actual drawing
