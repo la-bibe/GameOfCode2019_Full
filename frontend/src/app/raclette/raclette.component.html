@@ -1,15 +1,17 @@
-<div class="assiette text-center example-boundary"
-     style="text-align: center"
-     [style.height.px]="height * 2/3"
-     [style.width.px]="width"
-     [style.background-image]="getBackground('assets/raclette/assiette.png')">
+<div class="container h-100">
 
-  <div class="example-box image-background" *ngFor="let item of items"
-       cdkDragBoundary=".example-boundary" cdkDrag
-       [style.background-image]="getBackground(assets[item])">
+  <div #assiette class="h-50 w-50 d-inline-block example-boundary image-background"
+       style="text-align: center"
+       [style.height.px]="height * 2/3"
+       [style.width.px]="width"
+       [style.background-image]="getBackground('assets/raclette/assiette.png')">
+
+    <div class="item image-background w-25 h-25" *ngFor="let item of items; let aled = index"
+         cdkDragBoundary=".example-boundary" cdkDrag
+         (cdkDragMoved)="move($event, aled)"
+         [style.background-image]="getBackground(assets[item.id])">
+      {{aled}}
+    </div>
   </div>
-
-  {{items}}
-
 </div>
 

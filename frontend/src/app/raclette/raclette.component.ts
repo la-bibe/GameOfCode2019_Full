@@ -1,5 +1,7 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {CdkDragMove} from '@angular/cdk/drag-drop';
+import {Vertex} from '../../models/vertex';
 
 @Component({
   selector: 'app-raclette',
@@ -7,41 +9,47 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./raclette.component.css']
 })
 export class RacletteComponent implements OnInit {
-
-  height: number;
-  width: number;
-
   assets = [
     'assets/raclette/raclette.png',
     'assets/raclette/patate.png',
-    'assets/raclette/raclette.png'
+    'assets/raclette/jambom.png'
   ];
 
-  items: number[];
+  @ViewChild('assiette') el: ElementRef;
+
+  items: any[];
 
   constructor(private _sanitizer: DomSanitizer) {
-    this.height = window.innerHeight;
-    this.width = window.innerWidth;
     this.genItems(6);
   }
 
   genItems(size: number) {
     this.items = [];
     for (let i = 0; i < size; i++) {
-        this.items.push(Math.floor(Math.random() * this.assets.length));
+      this.items.push({
+        'id': Math.floor(Math.random() * this.assets.length),
+        'pos': new Vertex(0, 0)
+      });
     }
   }
 
   ngOnInit(): void {
+    this.el.nativeElement.focus();
+  }
+
+  move(event: CdkDragMove, id: number) {
+    console.log(id);
+    this.items[id].pos = new Vertex(
+      (event.pointerPosition.x - this.el.nativeElement.offsetLeft) / this.el.nativeElement.offsetWidth,
+      (event.pointerPosition.y - this.el.nativeElement.offsetTop) / this.el.nativeElement.offsetHeight
+    );
   }
 
   getBackground(image) {
     return this._sanitizer.bypassSecurityTrustStyle(` url(${image})`);
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.width = event.target.innerWidth;
-    this.height = event.target.innerHeight;
+  getData() {
+    return this.items;
   }
 }
