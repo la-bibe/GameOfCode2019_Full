@@ -42,6 +42,7 @@ export class IngameComponent implements OnInit {
   }
 
   public submitWork() {
+    this.container.clear();
     this.gameService.submit(this.game.getData());
   }
 

@@ -1,14 +1,15 @@
-<div class="container h-100">
+<div class="container h-100 d-flex align-items-center justify-content-center">
 
-  <div #assiette class="h-50 w-50 d-inline-block example-boundary image-background"
-       style="text-align: center"
-       [style.background-image]="getBackground('assets/raclette/assiette.png')">
+  <div #assiette class="m-5 plate example-boundary image-background text-center d-flex flex-row">
 
-    <div class="item image-background w-25 h-25" *ngFor="let item of items; let aled = index"
-         cdkDragBoundary=".example-boundary" cdkDrag
-         (cdkDragMoved)="move($event, aled)"
-         [style.background-image]="getBackground(assets[item.id])">
-      {{aled}}
+    <img src="/assets/raclette/assiette.png" class="img-fluid ">
+
+    <div>
+      <div class="item image-background w-25 h-25 " *ngFor="let item of items; let aled = index"
+           cdkDragBoundary=".example-boundary" cdkDrag
+           (cdkDragMoved)="move($event, aled)">
+        <img [src]="'/' + assets[item.id]" class="img-fluid w-100 h-100">
+      </div>
     </div>
   </div>
 </div>

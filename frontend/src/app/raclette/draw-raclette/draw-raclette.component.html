@@ -1,5 +1,4 @@
-<div #assiette class="h-100 w-100 d-inline-block image-background"
-     style="text-align: center"
+<div #assiette class="h-100 w-100 d-inline-block image-background text-center"
      [style.background-image]="getBackground('assets/raclette/assiette.png')">
   <div class="item" *ngFor="let item of items"
        [style.left]="item.pos.x * el.nativeElement.offsetWidth"

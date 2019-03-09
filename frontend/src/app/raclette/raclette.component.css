@@ -1,18 +1,20 @@
 .image-background {
-  background-repeat:no-repeat;
-  background-size:contain;
-  background-position: center;
+  background-size: contain;
+  background: no-repeat center;
+}
+
+.plate-bg {
 }
 
 .item {
-  width: 20% !important;
-  height: 20% !important;
+  width: 20vw !important;
+  height: 20vw !important;
 }
 
 .example-boundary {
-  width: 400px;
-  height: 400px;
-  max-width: 100%;
+  display: inline-block;
+  width: 75vw;
+  height: 75vw;
   border: dotted #ccc 2px;
 }
 

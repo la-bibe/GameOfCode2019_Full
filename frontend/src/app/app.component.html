@@ -1,5 +1,5 @@
 <div class="background h-100">
-<!--  <app-ingame *ngIf="gameService.playing; else spectate"></app-ingame>
+  <app-ingame *ngIf="gameService.playing; else spectate"></app-ingame>
   <ng-template #spectate>
     <app-spectate *ngIf="gameService.spectating; else menu"></app-spectate>
   </ng-template>
@@ -10,6 +10,5 @@
        [ngClass]="{'text-danger': gameService.timeLeft <= 5}"
        *ngIf="gameService.timeLeft">
     <span class="text-black counter" *ngIf="gameService.timeLeft">{{gameService.timeLeft}}</span>
-  </div>-->
-  <app-raclette></app-raclette>
+  </div>
 </div>

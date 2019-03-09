@@ -5,7 +5,7 @@
                  *ngFor="let _ of clothes; let i = index"></app-arrow>
     </div>
     <div class="col-6 h-75">
-      <app-fashion-draw class="d-block h-100" [drawables]="selectedClothes"></app-fashion-draw>
+      <app-fashion-draw class="d-block" [drawables]="selectedClothes"></app-fashion-draw>
     </div>
     <div class="col-3 h-100 d-inline-flex justify-content-center align-items-start flex-column">
       <div *ngFor="let _ of clothes; let i = index">

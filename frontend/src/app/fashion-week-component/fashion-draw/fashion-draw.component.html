@@ -3,7 +3,7 @@
        [style.background-image]="getBackground('assets/fashion_week/skin.png')">
   </div>
   <div class="image cover"
-       *ngFor="let image of clothes | clothesPipe; let i = index"
+       *ngFor="let image of drawables; let i = index"
        [style.z-index]="i"
        [style.background-image]="getBackground(image)">
   </div>
