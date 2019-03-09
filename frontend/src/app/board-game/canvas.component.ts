@@ -28,6 +28,8 @@ export class CanvasComponent implements AfterViewInit {
     this.cx.lineWidth = 3;
     this.cx.lineCap = 'round';
     this.cx.strokeStyle = '#000';
+    this.cx.fillStyle = 'white';
+    this.cx.fillRect(0, 0, canvasEl.width, canvasEl.height);
 
     this.captureEvents(canvasEl);
   }
