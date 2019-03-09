@@ -7,7 +7,7 @@ import {switchMap, takeUntil, pairwise} from 'rxjs/operators';
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
-  styles: ['canvas { border: 1px solid #000; max-width: 100%; max-height: 100%;}']
+  styles: ['canvas { border: 1px solid #000; max-width: 100%; max-height: 100%; touch-action: none}']
 })
 export class CanvasComponent implements AfterViewInit {
 
@@ -46,23 +46,6 @@ export class CanvasComponent implements AfterViewInit {
   }
 
   public initTouchEvent(canvas: HTMLCanvasElement) {
-    document.body.addEventListener('touchstart', function (e) {
-      if (e.target === canvas) {
-        e.preventDefault();
-      }
-    }, false);
-    document.body.addEventListener('touchend', function (e) {
-      if (e.target === canvas) {
-        e.preventDefault();
-      }
-    }, false);
-    document.body.addEventListener('touchmove', function (e) {
-      if (e.target === canvas) {
-        e.preventDefault();
-      }
-    }, false);
-
-
     canvas.addEventListener('touchstart', function (e) {
       // const mousePos = getTouchPos(canvas, e);
       if (e.target === canvas) {
