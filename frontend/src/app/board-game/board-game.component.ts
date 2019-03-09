@@ -6,20 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board-game.component.css']
 })
 export class BoardGameComponent implements OnInit {
-
- /* constructor() { }
-  drawRectable() {
-    const canvas = document.getElementById('stage');
-    if (canvas.getContext) {
-      let ctx = canvas.getContext('2d');
-
-      ctx.fillStyle = '#00FF00FF';
-      ctx.fillRect(25, 25, 100, 150);
-//      ctx.strokeRect(90, 90, 80, 80);
-    }
-  }
-*/
-  ngOnInit(){
+ private word_list = ['montains', 'T-shirt', 'glasses', 'bag', 'knife', 'bottle', 'cat', 'snake'];
+ public word = '';
+  ngOnInit() {
+    this.word = this.word_list[Math.floor(Math.random() * 100) % this.word_list.length];
   }
 
 }

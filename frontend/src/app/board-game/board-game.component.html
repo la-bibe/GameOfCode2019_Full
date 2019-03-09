@@ -1,5 +1,6 @@
 <p>
-  Word to be drawn:
+  Word to be drawn: {{word}}
 </p>
-<button (click)="drawRectable()" class="btn rounded btn-dark">Validate</button>
-<canvas id="stage" width="200" height="700"></canvas>
+<app-canvas></app-canvas>
+<br>
+<button (click)="drawRectable()" class="btn rounded btn-dark mx-auto">Validate</button>
