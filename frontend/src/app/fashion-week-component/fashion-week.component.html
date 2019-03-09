@@ -1,0 +1,12 @@
+<div class="container-fluid h-100 w-100 fashion-week-container">
+  <div class="row">
+    <div *ngIf="selectedClothes" class="w-50">
+      <div *ngFor="let clotheType of clothes; let i = index">
+        <app-fashion-scroll [(selected)]="selectedClothes[i]" [clotheType]="clotheType"></app-fashion-scroll>
+      </div>
+    </div>
+    <div *ngIf="selectedClothes" class="w-50">
+      <app-fashion-draw [clothes]="selectedClothes"></app-fashion-draw>
+    </div>
+  </div>
+</div>

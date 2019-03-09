@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Clothe} from '../../../models/fashion-week/clothe';
+import {ClotheType} from '../../../models/fashion-week/clothe-type';
 
 @Component({
   selector: 'app-fashion-scroll',
@@ -8,10 +9,10 @@ import {Clothe} from '../../../models/fashion-week/clothe';
 })
 export class FashionScrollComponent implements OnInit {
 
-  @Input() items: Clothe[];
+  @Input() clotheType: ClotheType;
 
   @Input() selected: Clothe;
-  @Output() selectedChange: EventEmitter<Clothe>;
+  @Output() selectedChange: EventEmitter<Clothe> = new EventEmitter();
 
   id = 0;
 
@@ -20,13 +21,8 @@ export class FashionScrollComponent implements OnInit {
   }
 
   emit() {
-    this.selected = this.items[this.id % this.items.length];
+    this.selected = this.clotheType.clothes[this.id % this.clotheType.clothes.length];
     this.selectedChange.emit(this.selected);
-  }
-
-  prev() {
-    this.id--;
-    this.emit();
   }
 
   next() {

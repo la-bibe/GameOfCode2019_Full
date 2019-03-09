@@ -4,25 +4,29 @@ import {LoginComponent} from './login/login.component';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
-import { FashionWeekComponentComponent } from './fashion-week-component/fashion-week-component.component';
+import { FashionWeekComponent } from './fashion-week-component/fashion-week.component';
 import { FashionScrollComponent } from './fashion-week-component/fashion-scroll/fashion-scroll.component';
 import {SpectateComponent} from './spectate/spectate.component';
 import {UserComponent} from './user/user.component';
 import { OrderByScorePipe } from './order-by-score.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import { FashionDrawComponent } from './fashion-week-component/fashion-draw/fashion-draw.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    FashionWeekComponentComponent,
+    FashionWeekComponent,
     FashionScrollComponent,
     LoginComponent,
     SpectateComponent,
     UserComponent,
-    OrderByScorePipe
+    OrderByScorePipe,
+    FashionDrawComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
