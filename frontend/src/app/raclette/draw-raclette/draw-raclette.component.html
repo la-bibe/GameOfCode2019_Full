@@ -1,0 +1,11 @@
+<div #assiette class="h-100 w-100 d-inline-block image-background"
+     style="text-align: center"
+     [style.height.px]="height * 2/3"
+     [style.width.px]="width"
+     [style.background-image]="getBackground('assets/raclette/assiette.png')">
+  <div class="item" *ngFor="let item of items"
+       [style.left]="item.pos.x * el.nativeElement.offsetWidth"
+       [style.top]="item.pos.y * el.nativeElement.offsetHeight"
+       [style.background-image]="getBackground(assets[item.id])">
+  </div>
+</div>
