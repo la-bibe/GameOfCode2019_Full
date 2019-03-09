@@ -1,0 +1,16 @@
+.assiette {
+  position: absolute;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position: center;
+/*  max-width: 500px;
+  max-height: 500px;*/
+}
+
+.spawner {
+  width: 100px;
+  height: 100px;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position: center;
+}

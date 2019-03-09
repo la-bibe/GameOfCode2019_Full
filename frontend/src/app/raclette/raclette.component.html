@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div [dndDraggable]="draggable.data"
+         [dndEffectAllowed]="draggable.effectAllowed"
+         [dndDisableIf]="draggable.disable"
+         (dndStart)="onDragStart($event)"
+         (dndCopied)="onDraggableCopied($event)"
+         (dndLinked)="onDraggableLinked($event)"
+         (dndMoved)="onDraggableMoved($event)"
+         (dndCanceled)="onDragCanceled($event)"
+         (dndEnd)="onDragEnd($event)" class="spawner col-md-4"
+         [style.background-image]="getBackground('assets/raclette/jambom.png')">
+    </div>
+    <div [dndDraggable]="draggable.data"
+         [dndEffectAllowed]="draggable.effectAllowed"
+         [dndDisableIf]="draggable.disable"
+         (dndStart)="onDragStart($event)"
+         (dndCopied)="onDraggableCopied($event)"
+         (dndLinked)="onDraggableLinked($event)"
+         (dndMoved)="onDraggableMoved($event)"
+         (dndCanceled)="onDragCanceled($event)"
+         (dndEnd)="onDragEnd($event)" class="spawner col-md-4"
+         [style.background-image]="getBackground('assets/raclette/patate.png')">
+    </div>
+    <div [dndDraggable]="draggable.data"
+         [dndEffectAllowed]="draggable.effectAllowed"
+         [dndDisableIf]="draggable.disable"
+         (dndStart)="onDragStart($event)"
+         (dndCopied)="onDraggableCopied($event)"
+         (dndLinked)="onDraggableLinked($event)"
+         (dndMoved)="onDraggableMoved($event)"
+         (dndCanceled)="onDragCanceled($event)"
+         (dndEnd)="onDragEnd($event)" class="spawner col-md-4"
+         [style.background-image]="getBackground('assets/raclette/raclette.png')">
+    </div>
+  </div>
+</div>
+
+<div class="assiette text-center"
+     style="text-align: center"
+     [style.height.px]="height * 2/3"
+     [style.width.px]="width"
+     [style.background-image]="getBackground('assets/raclette/assiette.png')">
+</div>
+
