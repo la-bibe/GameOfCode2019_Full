@@ -13,11 +13,11 @@ import {IngameComponent} from './ingame/ingame.component';
 import {ReactionMenuComponent} from './reaction-menu/reaction-menu.component';
 import {ReactionComponent} from './reaction/reaction.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ArrowComponent} from './fashion-week-component/left-arrow/arrow.component';
+import {ArrowComponent} from './fashion-week-component/arrow/arrow.component';
 import { VoteComponent } from './vote/vote.component';
 import { UserVoteComponent } from './vote/user-vote/user-vote.component';
 import { RacletteComponent } from './raclette/raclette.component';
-import {DndModule} from 'ngx-drag-drop';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import {DndModule} from 'ngx-drag-drop';
   imports: [
     BrowserModule,
     HttpClientModule,
-    DndModule
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],

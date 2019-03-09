@@ -1,10 +1,8 @@
-.image-containe {
-  position: relative;
-  top: 0;
-  width: 100%;
-}
-
 .image {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   position: absolute;
   background-repeat:no-repeat;
   background-size:contain;

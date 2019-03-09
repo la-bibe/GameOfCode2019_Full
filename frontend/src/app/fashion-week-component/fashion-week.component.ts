@@ -59,11 +59,13 @@ export class FashionWeekComponent implements OnInit {
   }
 
   selectNext(i: number) {
+    console.log('aled');
     const id = this.seletedIds[i];
     this.select(i, id >= this.clothes[i].length - 1 ? 0 : id + 1);
   }
 
   selectPrev(i: number) {
+    console.log('aled');
     const id = this.seletedIds[i];
     this.select(i, id <= 0 ? this.clothes[i].length - 1 : id - 1);
   }

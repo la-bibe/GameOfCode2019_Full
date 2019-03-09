@@ -18,10 +18,6 @@ export class FashionDrawComponent {
 
   @Input() drawables: string[];
 
-  @Input() width = 100;
-  @Input() height = 100;
-
-
   getBackground(image) {
     return this._sanitizer.bypassSecurityTrustStyle(` url(${image})`);
   }

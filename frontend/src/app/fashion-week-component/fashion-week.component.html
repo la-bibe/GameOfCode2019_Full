@@ -1,21 +1,15 @@
-<div class="wrapper position-relative">
-  <div class="arrow-left" *ngIf="selectedClothes">
-    <div *ngFor="let clotheType of clothes; let i = index" [style.height.px]="height/clothes.length">
-      <app-arrow [height]="height/clothes.length + height / 4" (clicked)="selectNext(i)"></app-arrow>
+<div class="w-100 h-100">
+  <div class="w-25 h-100 d-inline-block">
+    <div class="h-25 w-100 d-block" *ngFor="let clotheType of clothes; let i = index">
+      <app-arrow class="d-inline-block w-100 h-100" (clicked)="selectNext(i)"></app-arrow>-
     </div>
   </div>
-
-  <div *ngIf="selectedClothes && ready">
-    <app-fashion-draw [width]="width"
-                      [height]="height"
-                      [drawables]="selectedClothes"></app-fashion-draw>
+  <div class="w-50 h-100 d-inline-block">
+    <app-fashion-draw class="w-100 h-100 d-inline-block" [drawables]="selectedClothes"></app-fashion-draw>
   </div>
-
-  <div class="arrow-right">
-    <div *ngIf="selectedClothes">
-      <div *ngFor="let clotheType of clothes; let i = index" [style.height.px]="height/clothes.length">
-        <app-arrow [height]="height/clothes.length + height / 4" [left]="false" (clicked)="selectPrev(i)"></app-arrow>
-      </div>
+  <div class="w-25 h-100 d-inline-block">
+    <div class="h-25 w-100 d-block" *ngFor="let clotheType of clothes; let i = index">
+      <app-arrow class="d-inline-block w-100 h-100" [left]="false" (clicked)="selectPrev(i)"></app-arrow>-
     </div>
   </div>
 </div>

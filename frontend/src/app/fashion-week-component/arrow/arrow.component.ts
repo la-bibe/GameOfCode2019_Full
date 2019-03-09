@@ -10,7 +10,6 @@ export class ArrowComponent {
 
   constructor(private _sanitizer: DomSanitizer) { }
 
-  @Input() height = 0;
   @Input() left = true;
 
   @Output() clicked: EventEmitter<boolean> = new EventEmitter();

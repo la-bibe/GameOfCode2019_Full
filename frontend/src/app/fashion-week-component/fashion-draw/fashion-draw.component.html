@@ -1,17 +1,11 @@
-<div class="image-containe h100" *ngIf="drawables">
-  <div class="text-center">
-    <div class="image"
-         [style.height.px]="height"
-         [style.width.px]="width * 6/10"
-         [style.left.px]="width* 2/10"
-         [style.background-image]="getBackground('assets/fashion_week/skin.png')">
-    </div>
-    <div class="image"
-         [style.height.px]="height"
-         [style.width.px]="width * 6/10"
-         [style.left.px]="width * 2/10"
-         *ngFor="let image of drawables?.reverse()"
-         [style.background-image]="getBackground(image)">
-    </div>
+
+<div class="text-center h-100 w-100">
+  <div class="d-inline-block image "
+       [style.background-image]="getBackground('assets/fashion_week/skin.png')">
+  </div>
+  <div class="d-inline-block image"
+       *ngFor="let image of drawables?.reverse()"
+       [style.background-image]="getBackground(image)">
   </div>
 </div>
+

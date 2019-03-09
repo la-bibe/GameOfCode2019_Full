@@ -7,10 +7,22 @@
   max-height: 500px;*/
 }
 
-.spawner {
-  width: 100px;
-  height: 100px;
+.image-background {
   background-repeat:no-repeat;
   background-size:contain;
   background-position: center;
 }
+
+.example-box {
+  width: 200px;
+  height: 200px;
+}
+
+.example-boundary {
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  border: dotted #ccc 2px;
+}
+
+
