@@ -5,13 +5,9 @@ import {
   ElementRef,
   Input, IterableDiffer,
   IterableDiffers,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
   ViewChild
 } from '@angular/core';
 import {Clothe} from '../../../models/fashion-week/clothe';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-fashion-draw',
@@ -67,8 +63,8 @@ export class FashionDrawComponent implements AfterViewInit, DoCheck {
   drawImg(image, part, clothe): any {
     setTimeout(() => {
       this.cx.drawImage(image,
-        clothe.pos.x + clothe.size.x * part.pos.x,
-        clothe.pos.y + clothe.size.y * part.pos.y,
+        this.width * clothe.pos.x + this.width * clothe.size.x * part.pos.x,
+        this.height * clothe.pos.y + this.height * clothe.size.y * part.pos.y,
         this.width * clothe.size.x * part.size.x,
         this.height * clothe.size.y * part.size.y);
     }, 1000);

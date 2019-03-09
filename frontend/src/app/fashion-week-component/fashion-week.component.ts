@@ -17,14 +17,8 @@ export class FashionWeekComponent implements OnInit {
   height: any;
 
   constructor(private fashionWeekService: FashionWeekService) {
-    this.height = window.screen.height;
-    this.width = window.screen.width;
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.height = event.target.innerHeight;
-    this.width = event.target.innerWidth;
+    this.height = window.innerHeight;
+    this.width = window.innerWidth;
   }
 
   ngOnInit() {
