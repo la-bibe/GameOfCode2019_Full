@@ -55,20 +55,29 @@ export class GameService {
     });
     socketService.on('updatePlayerRanking', (data) => {
       this.players = data;
+      this.emotePlayer(data[0].id, 'faceHappy');
+      this.emotePlayer(data[data.length - 1].id, 'faceSad');
     });
     socketService.on('playerAnswered', (data) => {
       this.emotePlayer(data.player.id, 'idea');
     });
-    this.socketService.on('error', (data) => {
-      this.playing = false;
-      this.spectating = false;
-      this.state = null;
-      this.game = null;
-      this.timeLeft = null;
-      this.players = [];
-      this.player = null;
-      this.propositions = [];
+    socketService.on('resetClient', (data) => {
+      setTimeout(() => this.reset(), 5000);
     });
+    this.socketService.on('error', (data) => {
+      this.reset();
+    });
+  }
+
+  private reset() {
+    this.playing = false;
+    this.spectating = false;
+    this.state = 'lounge';
+    this.game = null;
+    this.timeLeft = null;
+    this.players = [];
+    this.player = null;
+    this.propositions = [];
   }
 
   private onTimeLeft(data) {
