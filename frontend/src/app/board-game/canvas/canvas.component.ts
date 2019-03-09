@@ -6,7 +6,7 @@ import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
 
 @Component({
   selector: 'app-canvas',
-  template: '<canvas #canvas></canvas>',
+  templateUrl: './canvas.component.html',
   styles: ['canvas { border: 1px solid #000; max-width: 100%; max-height: 100%;}']
 })
 export class CanvasComponent implements AfterViewInit {
@@ -28,10 +28,16 @@ export class CanvasComponent implements AfterViewInit {
     this.cx.lineWidth = 3;
     this.cx.lineCap = 'round';
     this.cx.strokeStyle = '#000';
+
+    this.clear();
+    this.captureEvents(canvasEl);
+  }
+
+  public clear() {
+    const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
+    this.cx = canvasEl.getContext('2d');
     this.cx.fillStyle = 'white';
     this.cx.fillRect(0, 0, canvasEl.width, canvasEl.height);
-
-    this.captureEvents(canvasEl);
   }
 
 public getData() {
