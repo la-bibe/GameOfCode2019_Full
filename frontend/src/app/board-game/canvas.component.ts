@@ -2,12 +2,12 @@ import {
   Component, Input, ElementRef, AfterViewInit, ViewChild
 } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { switchMap, takeUntil, pairwise } from 'rxjs/operators'
+import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
 
 @Component({
   selector: 'app-canvas',
   template: '<canvas #canvas></canvas>',
-  styles: ['canvas { border: 1px solid #000;}']
+  styles: ['canvas { border: 1px solid #000; max-width: 100%; max-height: 100%;}']
 })
 export class CanvasComponent implements AfterViewInit {
 
@@ -22,8 +22,8 @@ export class CanvasComponent implements AfterViewInit {
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.cx = canvasEl.getContext('2d');
 
-//    canvasEl.width = this.width;
- //   canvasEl.height = this.height;
+    canvasEl.width = this.width;
+    canvasEl.height = this.height;
 
     this.cx.lineWidth = 3;
     this.cx.lineCap = 'round';
