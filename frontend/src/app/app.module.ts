@@ -22,7 +22,8 @@ import { FashionDrawComponent } from './fashion-week-component/fashion-draw/fash
     SpectateComponent,
     UserComponent,
     OrderByScorePipe,
-    FashionDrawComponent
+    FashionDrawComponent,
+    OrderByScorePipe
   ],
   imports: [
     BrowserModule,

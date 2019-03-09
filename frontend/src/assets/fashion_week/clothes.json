@@ -214,5 +214,79 @@
         ]
       }
     ]
+  },
+  {
+    "name": "shoes",
+    "icon": "",
+    "clothes": [
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 0,
+          "y": 0
+        },
+        "parts": [
+          {
+            "path": "Shoes/Black/blackShoe1.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Shoes/Black/blackShoe1.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 0,
+          "y": 0
+        },
+        "parts": [
+          {
+            "path": "Shoes/Black/blackShoe2.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Shoes/Black/blackShoe2.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      }
+    ]
   }
 ]
