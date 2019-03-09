@@ -1,9 +1,10 @@
 <div class="background h-100">
-  <app-ingame *ngIf="gameService.playing; else spectate"></app-ingame>
+  <app-fashion-week></app-fashion-week>
+ <!-- <app-ingame *ngIf="gameService.playing; else spectate"></app-ingame>
   <ng-template #spectate>
     <app-spectate *ngIf="gameService.spectating; else menu"></app-spectate>
   </ng-template>
   <ng-template #menu>
     <app-main-menu></app-main-menu>
-  </ng-template>
+  </ng-template>-->
 </div>

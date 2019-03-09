@@ -1,0 +1,7 @@
+<div class="h-100 w-100">
+  <img [src]="[left ? 'assets/icons/backward.png' : 'assets/icons/forward.png']"
+       [alt]="left" class="w-100 h-100"
+       [align]="left ? 'RIGHT' : 'LEFT'"
+       (click)="emit()"
+       style="max-width: 300px">
+</div>

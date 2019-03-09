@@ -1,7 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {FashionWeekService} from '../../services/fashion-week.service';
-import {ClotheType} from '../../models/fashion-week/clothe-type';
-import {Clothe} from '../../models/fashion-week/clothe';
 
 @Component({
   selector: 'app-fashion-week',
@@ -10,11 +8,14 @@ import {Clothe} from '../../models/fashion-week/clothe';
 })
 export class FashionWeekComponent implements OnInit {
 
-  clothes: ClotheType[];
-  selectedClothes: Clothe[];
+  clothes: string[][];
+  selectedClothes: string[];
+  seletedIds: number[];
 
   width: any;
   height: any;
+
+  ready = false;
 
   constructor(private fashionWeekService: FashionWeekService) {
     this.height = window.innerHeight;
@@ -37,12 +38,31 @@ export class FashionWeekComponent implements OnInit {
 
   initSelectedClothes() {
     this.selectedClothes = [];
+    this.seletedIds = [];
     for (let i = 0; i < this.clothes.length; i++) {
-      this.selectedClothes.push(this.clothes[i].clothes[0]);
+      const j = Math.floor(Math.random() * this.clothes[i].length);
+      this.selectedClothes.push(this.clothes[i][j]);
+      this.seletedIds.push(j);
     }
+    this.ready = true;
   }
 
-  aled() {
-    console.log(this.selectedClothes);
+  select(i: number, id: number) {
+    this.selectedClothes[i] = this.clothes[i][id];
+    this.seletedIds[i] = id;
+  }
+
+  selectNext(i: number) {
+    const id = this.seletedIds[i];
+    this.select(i, id >= this.clothes[i].length - 1 ? 0 : id + 1);
+  }
+
+  selectPrev(i: number) {
+    const id = this.seletedIds[i];
+    this.select(i, id <= 0 ? this.clothes[i].length - 1 : id - 1);
+  }
+
+  getData() {
+    return this.seletedIds;
   }
 }

@@ -1,6 +1,27 @@
-.fashion-week-container {
-  /*
-  background: url("https://i.ytimg.com/vi/PXNfg73vqn4/maxresdefault.jpg");
-  */
-  background-size: cover;
+.menu-container {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  max-width: 200px;
+}
+
+.arrow-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  max-width: 200px;
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
 }

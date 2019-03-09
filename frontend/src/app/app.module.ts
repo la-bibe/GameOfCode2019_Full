@@ -3,7 +3,6 @@ import {MainMenuComponent} from './main-menu/main-menu.component';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FashionWeekComponent} from './fashion-week-component/fashion-week.component';
-import {FashionScrollComponent} from './fashion-week-component/fashion-scroll/fashion-scroll.component';
 import {SpectateComponent} from './spectate/spectate.component';
 import {UserComponent} from './user/user.component';
 import {OrderByScorePipe} from './order-by-score.pipe';
@@ -14,13 +13,15 @@ import {IngameComponent} from './ingame/ingame.component';
 import {ReactionMenuComponent} from './reaction-menu/reaction-menu.component';
 import {ReactionComponent} from './reaction/reaction.component';
 import {HttpClientModule} from '@angular/common/http';
+import {ArrowComponent} from './fashion-week-component/left-arrow/arrow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
     FashionWeekComponent,
-    FashionScrollComponent,
+    FashionDrawComponent,
+    ArrowComponent,
     SpectateComponent,
     UserComponent,
     OrderByScorePipe,
@@ -30,7 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
     FashionDrawComponent,
     OrderByScorePipe,
     BoardGameComponent,
-    CanvasComponent
+    CanvasComponent,
   ],
   imports: [
     BrowserModule,

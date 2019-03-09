@@ -1,1 +1,4 @@
-<canvas #canvas [width]="width" [height]="height"></canvas>
+<div class="image-containe container-fluid h100" *ngIf="drawables">
+    <img class="image" [src]="['assets/fashion_week/skin.png']" alt="">
+    <img class="image" *ngFor="let image of drawables?.reverse(); let i = index" [style.z-index]="i" [src]="image"  alt="">
+</div>

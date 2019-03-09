@@ -1,22 +1,17 @@
-<div class="container-fluid h-100 w-100 fashion-week-container">
-  <div class="row">
+<div class="arrow-left" *ngIf="selectedClothes">
+  <div *ngFor="let clotheType of clothes; let i = index" class="row" [style.height.px]="height/clothes.length">
+    <app-arrow class="h-100 w-100" (clicked)="selectNext(i)"></app-arrow>
+  </div>
+</div>
 
-    <div class="col-md-4">
-      <div *ngIf="selectedClothes">
-        <div *ngFor="let clotheType of clothes; let i = index">
-          <app-fashion-scroll (selectedChange)="aled()" [(selected)]="selectedClothes[i]" [clotheType]="clotheType"></app-fashion-scroll>
-        </div>
-      </div>
+<div class="center" *ngIf="selectedClothes && ready">
+  <app-fashion-draw [drawables]="selectedClothes"></app-fashion-draw>
+</div>
+
+<div class="arrow-right">
+  <div *ngIf="selectedClothes">
+    <div *ngFor="let clotheType of clothes; let i = index" class="row" [style.height.px]="height/clothes.length">
+      <app-arrow class="h-100 w-100"  [left]="false" (clicked)="selectPrev(i)"></app-arrow>
     </div>
-    <div class="col-md-4">
-      <div *ngIf="selectedClothes">
-        <app-fashion-draw [width]="width / 3" [height]="height" [clothes]="selectedClothes"></app-fashion-draw>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-
-    </div>
-
   </div>
 </div>
