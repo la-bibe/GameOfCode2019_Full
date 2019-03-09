@@ -3,6 +3,7 @@ import {FashionDrawComponent} from '../../fashion-week-component/fashion-draw/fa
 import {GameService} from '../../../services/game.service';
 import {CanvasComponent} from '../../board-game/canvas/canvas.component';
 import {BoardDisplayComponent} from '../../board-game/board-display/board-display.component';
+import {DrawRacletteComponent} from '../../raclette/draw-raclette/draw-raclette.component';
 
 @Component({
   selector: 'app-user-vote',
@@ -19,7 +20,8 @@ export class UserVoteComponent implements OnInit {
 
   private games = {
     'fashion': FashionDrawComponent,
-    'board': BoardDisplayComponent
+    'board': BoardDisplayComponent,
+    'raclette': DrawRacletteComponent
   };
 
   constructor(public gameService: GameService, private resolver: ComponentFactoryResolver) {

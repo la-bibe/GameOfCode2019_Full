@@ -4,7 +4,7 @@ export class UserModel {
 
   name: string;
 
-  score: number;
+  points = 0;
 
   emote: string;
 }

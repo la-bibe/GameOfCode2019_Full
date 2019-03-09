@@ -56,6 +56,19 @@ export class GameService {
     socketService.on('updatePlayerRanking', (data) => {
       this.players = data;
     });
+    socketService.on('playerAnswered', (data) => {
+      this.emotePlayer(data.player.id, 'idea');
+    });
+    this.socketService.on('error', (data) => {
+      this.playing = false;
+      this.spectating = false;
+      this.state = null;
+      this.game = null;
+      this.timeLeft = null;
+      this.players = [];
+      this.player = null;
+      this.propositions = [];
+    });
   }
 
   private onTimeLeft(data) {

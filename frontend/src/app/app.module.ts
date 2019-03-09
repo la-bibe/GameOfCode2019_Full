@@ -54,8 +54,10 @@ import {DrawRacletteComponent} from './raclette/draw-raclette/draw-raclette.comp
   entryComponents: [
     FashionWeekComponent,
     BoardGameComponent,
+    RacletteComponent,
     FashionDrawComponent,
-    BoardDisplayComponent
+    BoardDisplayComponent,
+    DrawRacletteComponent
   ]
 })
 export class AppModule {

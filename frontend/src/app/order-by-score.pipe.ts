@@ -9,7 +9,7 @@ export class OrderByScorePipe implements PipeTransform {
 
   transform(array: UserModel[], args?: any): any {
     // @ts-ignore
-    return array.slice().sort((a, b) => b.score - a.score);
+    return array.slice().sort((a, b) => b.points - a.points);
   }
 
 }

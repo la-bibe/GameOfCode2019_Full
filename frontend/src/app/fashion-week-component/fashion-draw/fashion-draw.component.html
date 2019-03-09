@@ -4,7 +4,7 @@
   </div>
   <div class="image cover"
        *ngFor="let image of drawables?.reverse(); let i = index"
-       [style.z-index]="i"
+       [style.z-index]="i * 10 + 10"
        [style.background-image]="getBackground(image)">
   </div>
 </div>

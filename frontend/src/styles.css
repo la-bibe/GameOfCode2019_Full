@@ -1,7 +1,13 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-body {
+html {
   height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
 }
 
