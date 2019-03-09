@@ -17,6 +17,7 @@ export class BoardGameComponent implements OnInit {
   }
 
   getData() {
+    // @ts-ignore
     return this.canvas.getData();
   }
 }

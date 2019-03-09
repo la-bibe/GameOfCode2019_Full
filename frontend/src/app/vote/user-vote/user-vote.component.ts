@@ -31,6 +31,7 @@ export class UserVoteComponent implements OnInit {
     const c = this.display.createComponent(t);
     // @ts-ignore
     c.instance.setData(this.proposition.proposition);
+    // @ts-ignore
     c.instance.style.display = 'block';
   }
 
