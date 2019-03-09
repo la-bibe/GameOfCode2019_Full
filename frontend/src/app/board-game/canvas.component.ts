@@ -2,19 +2,19 @@ import {
   Component, Input, ElementRef, AfterViewInit, ViewChild
 } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { switchMap, takeUntil, pairwise } from 'rxjs/operators'
+import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
 
 @Component({
   selector: 'app-canvas',
   template: '<canvas #canvas></canvas>',
-  styles: ['canvas { border: 1px solid #000; }']
+  styles: ['canvas { border: 1px solid #000; max-width: 100%; max-height: 100%;}']
 })
 export class CanvasComponent implements AfterViewInit {
 
   @ViewChild('canvas') public canvas: ElementRef;
 
-  @Input() public width = 400;
-  @Input() public height = 400;
+   @Input() public width = 500;
+   @Input() public height = 500;
 
   private cx: CanvasRenderingContext2D;
 
@@ -30,6 +30,10 @@ export class CanvasComponent implements AfterViewInit {
     this.cx.strokeStyle = '#000';
 
     this.captureEvents(canvasEl);
+  }
+
+public export_canvas() {
+    return this.canvas.nativeElement.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
   }
 
   private captureEvents(canvasEl: HTMLCanvasElement) {
@@ -48,7 +52,7 @@ export class CanvasComponent implements AfterViewInit {
               // pairwise lets us get the previous value to draw a line from
               // the previous point to the current point
               pairwise()
-            )
+            );
         })
       )
       .subscribe((res: [MouseEvent, MouseEvent]) => {
