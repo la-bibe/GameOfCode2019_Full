@@ -1,0 +1,11 @@
+.reactions-container {
+  height: 72px;
+}
+
+.reaction {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

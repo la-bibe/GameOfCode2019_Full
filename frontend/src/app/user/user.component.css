@@ -1,0 +1,9 @@
+.emote {
+  position: absolute;
+  top: -64px;
+  right: 0;
+}
+
+.self {
+  border: 1px dashed white;
+}

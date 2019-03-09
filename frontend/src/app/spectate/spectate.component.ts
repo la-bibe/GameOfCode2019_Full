@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserModel} from '../../models/user-model';
+import {GameService} from '../../services/game.service';
 
 @Component({
   selector: 'app-spectate',
@@ -8,46 +8,20 @@ import {UserModel} from '../../models/user-model';
 })
 export class SpectateComponent implements OnInit {
 
-  users: UserModel[];
+  reactions: any[] = [];
 
-  constructor() {
+  constructor(public gameService: GameService) {
+    gameService.messageEmitter.subscribe(s => {
+      this.reactions.push(s);
+      console.log(this.reactions);
+    });
+  }
+
+  removeReaction(val) {
+    this.reactions = this.reactions.filter(r => r !== val);
   }
 
   ngOnInit() {
-    this.users = [
-      {
-        name: 'Bassintag',
-        score: 0
-      },
-      {
-        name: 'Lol',
-        score: 1
-      },
-      {
-        name: 'Aled',
-        score: 0
-      },
-      {
-        name: 'Jpp',
-        score: 0
-      },
-      {
-        name: 'Oskour',
-        score: 0
-      },
-      {
-        name: 'ZZZZ',
-        score: 0
-      },
-      {
-        name: 'XOXO',
-        score: 0
-      },
-      {
-        name: 'MEGALUL',
-        score: 0
-      },
-    ];
   }
 
 }

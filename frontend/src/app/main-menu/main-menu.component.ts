@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GameService} from '../../services/game.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public gameService: GameService) {
+  }
 
   ngOnInit() {
   }

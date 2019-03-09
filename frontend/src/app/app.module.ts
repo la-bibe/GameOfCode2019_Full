@@ -1,38 +1,27 @@
 import {AppComponent} from './app.component';
 import {MainMenuComponent} from './main-menu/main-menu.component';
-import {LoginComponent} from './login/login.component';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
 import {SpectateComponent} from './spectate/spectate.component';
 import {UserComponent} from './user/user.component';
-import { OrderByScorePipe } from './order-by-score.pipe';
+import {OrderByScorePipe} from './order-by-score.pipe';
+import {IngameComponent} from './ingame/ingame.component';
+import {ReactionMenuComponent} from './reaction-menu/reaction-menu.component';
+import {ReactionComponent} from './reaction/reaction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    LoginComponent,
     SpectateComponent,
     UserComponent,
-    OrderByScorePipe
+    OrderByScorePipe,
+    IngameComponent,
+    ReactionMenuComponent,
+    ReactionComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: MainMenuComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: 'spectate',
-        component: SpectateComponent
-      }
-    ])
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

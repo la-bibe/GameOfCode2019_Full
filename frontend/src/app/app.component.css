@@ -1,3 +1,4 @@
 .background {
+  z-index: -999;
   background: #7f53ac linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }

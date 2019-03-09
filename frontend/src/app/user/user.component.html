@@ -1,10 +1,14 @@
-<div>
-  <img src="https://api.adorable.io/avatars/64/{{this.user.name}}}" class="img-fluid rounded shadow">
+<div class="p-1 rounded" [ngClass]="{'self': this.gameService.id === this.user.id}">
+  <div class="position-relative d-inline">
+    <img src="https://api.adorable.io/avatars/64/{{this.user.name}}}" class="img-fluid rounded shadow">
+    <img src="/assets/emotes/emote_{{this.user.emote}}.png" *ngIf="this.user.emote" class="emote"
+         height="32" width="32">
+  </div>
   <div class="mt-3 mb-1 text-light">
     <img src="/assets/medals/{{this.rank}}.png" *ngIf="this.rank < 4" height="24" class="mr-3">
     <span class="font-weight-bold">#{{this.rank}}</span>
   </div>
-  <div class="mb-3 text-light">
+  <div class="text-light">
     <h5>{{this.user.name}} </h5>
   </div>
 </div>

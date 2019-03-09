@@ -1,0 +1,11 @@
+<div class="bg-light shadow reactions-container d-flex align-items-center">
+  <div (click)="open = !open" class="d-inline-flex px-3 h-100 align-items-center cursor-pointer">
+    <span>{{open ? '-' : '+'}}</span>
+  </div>
+  <div *ngIf="open" class="d-inline-block ml-2">
+    <div class="reaction d-inline-block mx-2 cursor-pointer"
+         [style.background-image]="'url(/assets/reactions/' + type + '.png)'"
+         *ngFor="let type of types"
+         (click)="gameService.message(type)"></div>
+  </div>
+</div>

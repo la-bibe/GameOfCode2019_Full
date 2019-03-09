@@ -2,7 +2,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 import {UserModel} from '../models/user-model';
 
 @Pipe({
-  name: 'orderByScore'
+  name: 'orderByScore',
+  pure: false
 })
 export class OrderByScorePipe implements PipeTransform {
 

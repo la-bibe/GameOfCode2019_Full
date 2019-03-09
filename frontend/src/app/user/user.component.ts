@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserModel} from '../../models/user-model';
+import {GameService} from '../../services/game.service';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +13,7 @@ export class UserComponent implements OnInit {
 
   @Input() rank: number;
 
-  constructor() {
+  constructor(public gameService: GameService) {
   }
 
   ngOnInit() {

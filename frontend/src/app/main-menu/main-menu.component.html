@@ -1,4 +1,4 @@
 <div class="container h-100 d-flex flex-column align-items-center justify-content-center">
-  <a class="btn btn-light shadow w-100 my-5" routerLink="/login">PLAY</a>
-  <a class="btn btn-light shadow w-100 my-5" routerLink="/spectate">SPECTATE</a>
+  <a class="btn btn-light shadow w-100 my-5" routerLink="/play" (click)="this.gameService.play()">PLAY</a>
+  <a class="btn btn-light shadow w-100 my-5" routerLink="/spectate" (click)="this.gameService.spectate()">SPECTATE</a>
 </div>

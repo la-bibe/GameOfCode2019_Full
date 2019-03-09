@@ -1,0 +1,5 @@
+<img class="position-fixed emote"
+     [style.bottom]="getPercent() * this.top + '%'"
+     [style.left]="this.x + '%'"
+     [style.opacity]="0.5 - getPercent() * 0.5"
+     src="/assets/reactions/{{type.message}}.png" width="64" height="64">
