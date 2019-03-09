@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, Sanitizer, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, Sanitizer, ViewChild} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -16,7 +16,7 @@ export class DrawRacletteComponent implements OnInit {
     'assets/raclette/jambom.png'
   ];
 
-  items: [];
+  @Input() items: [];
 
   constructor(private _sanitizer: DomSanitizer) {}
 

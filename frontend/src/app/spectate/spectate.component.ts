@@ -12,8 +12,9 @@ export class SpectateComponent implements OnInit {
 
   constructor(public gameService: GameService) {
     gameService.messageEmitter.subscribe(s => {
-      this.reactions.push(s);
-      console.log(this.reactions);
+      if (this.reactions.length < 20) {
+        this.reactions.push(s);
+      }
     });
   }
 
