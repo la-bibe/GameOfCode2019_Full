@@ -52,6 +52,12 @@ export class FashionWeekComponent implements OnInit {
     this.seletedIds[i] = id;
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.width = event.target.innerWidth;
+    this.height = event.target.innerHeight;
+  }
+
   selectNext(i: number) {
     const id = this.seletedIds[i];
     this.select(i, id >= this.clothes[i].length - 1 ? 0 : id + 1);

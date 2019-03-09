@@ -1,4 +1,17 @@
-<div class="image-containe container-fluid h100" *ngIf="drawables">
-    <img class="image" [src]="['assets/fashion_week/skin.png']" alt="">
-    <img class="image" *ngFor="let image of drawables?.reverse(); let i = index" [style.z-index]="i" [src]="image"  alt="">
+<div class="image-containe h100" *ngIf="drawables">
+  <div class="text-center">
+    <div class="image"
+         [style.height.px]="height"
+         [style.width.px]="width * 8/10"
+         [style.left.px]="width * 1/10"
+         [style.background-image]="getBackground('assets/fashion_week/skin.png')">
+    </div>
+    <div class="image"
+         [style.height.px]="height"
+         [style.width.px]="width * 8/10"
+         [style.left.px]="width * 1/10"
+         *ngFor="let image of drawables?.reverse()"
+         [style.background-image]="getBackground(image)">
+    </div>
+  </div>
 </div>

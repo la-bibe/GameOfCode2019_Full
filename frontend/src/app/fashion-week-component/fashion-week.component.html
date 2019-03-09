@@ -4,8 +4,8 @@
   </div>
 </div>
 
-<div class="center" *ngIf="selectedClothes && ready">
-  <app-fashion-draw [drawables]="selectedClothes"></app-fashion-draw>
+<div *ngIf="selectedClothes && ready">
+  <app-fashion-draw [width]="width" [height]="height" [drawables]="selectedClothes"></app-fashion-draw>
 </div>
 
 <div class="arrow-right">

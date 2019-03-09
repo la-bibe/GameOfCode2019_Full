@@ -4,6 +4,7 @@ import {
   Input,
   ViewChild
 } from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-fashion-draw',
@@ -12,16 +13,16 @@ import {
 })
 export class FashionDrawComponent {
 
-  constructor() {
-  }
-
-  @ViewChild('canvas') public canvas: ElementRef;
+  constructor(private _sanitizer: DomSanitizer) {}
 
   @Input() drawables: string[];
 
   @Input() width = 100;
   @Input() height = 100;
 
-  private cx: CanvasRenderingContext2D;
+
+  getBackground(image) {
+    return this._sanitizer.bypassSecurityTrustStyle(` url(${image})`);
+  }
 
 }
