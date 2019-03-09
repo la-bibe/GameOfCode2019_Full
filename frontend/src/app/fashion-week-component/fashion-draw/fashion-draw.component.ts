@@ -5,6 +5,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {FashionWeekService} from '../../../services/fashion-week.service';
 
 @Component({
   selector: 'app-fashion-draw',
@@ -13,7 +14,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class FashionDrawComponent {
 
-  constructor(private _sanitizer: DomSanitizer) {}
+  constructor(private _sanitizer: DomSanitizer, private fashionWeekService: FashionWeekService) {}
 
   @Input() drawables: string[];
 
@@ -23,6 +24,19 @@ export class FashionDrawComponent {
 
   getBackground(image) {
     return this._sanitizer.bypassSecurityTrustStyle(` url(${image})`);
+  }
+
+  setData(selectedIds: number[]) {
+    this.fashionWeekService.clothes().subscribe(
+      data => {
+        this.drawables = [];
+        for (let i = 0; i < selectedIds.length; i++) {
+          this.drawables.push(data[i][selectedIds[i]]);
+        }
+      },
+      error => console.log(error)
+    );
+
   }
 
 }
