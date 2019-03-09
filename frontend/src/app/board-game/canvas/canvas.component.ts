@@ -15,6 +15,7 @@ export class CanvasComponent implements AfterViewInit {
 
    @Input() public width = 500;
    @Input() public height = 500;
+   public color = 'black';
 
   private cx: CanvasRenderingContext2D;
 
@@ -30,7 +31,49 @@ export class CanvasComponent implements AfterViewInit {
     this.cx.strokeStyle = '#000';
 
     this.clear();
+    this.initTouchEvent(canvasEl);
     this.captureEvents(canvasEl);
+  }
+
+  public initTouchEvent(canvas: HTMLCanvasElement) {
+    document.body.addEventListener('touchstart', function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener('touchend', function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener('touchmove', function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+
+
+    canvas.addEventListener('touchstart', function (e) {
+      // const mousePos = getTouchPos(canvas, e);
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent('mousedown', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(mouseEvent);
+    }, false);
+    canvas.addEventListener('touchend', function (e) {
+      const mouseEvent = new MouseEvent('mouseup', {});
+      canvas.dispatchEvent(mouseEvent);
+    }, false);
+    canvas.addEventListener('touchmove', function (e) {
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent('mousemove', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(mouseEvent);
+    }, false);
   }
 
   public clear() {
@@ -38,6 +81,10 @@ export class CanvasComponent implements AfterViewInit {
     this.cx = canvasEl.getContext('2d');
     this.cx.fillStyle = 'white';
     this.cx.fillRect(0, 0, canvasEl.width, canvasEl.height);
+  }
+
+  public setColor(color: string) {
+    this.color = color;
   }
 
 public getData() {
@@ -85,6 +132,8 @@ public getData() {
   private drawOnCanvas(prevPos: { x: number, y: number }, currentPos: { x: number, y: number }) {
     if (!this.cx) { return; }
 
+    this.cx.fillStyle = this.color;
+    this.cx.strokeStyle = this.color;
     this.cx.beginPath();
 
     if (prevPos) {
