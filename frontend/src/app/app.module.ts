@@ -20,6 +20,7 @@ import { RacletteComponent } from './raclette/raclette.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BoardDisplayComponent } from './board-game/board-display/board-display.component';
 import {DrawRacletteComponent} from './raclette/draw-raclette/draw-raclette.component';
+import { ClothesPipePipe } from './clothes-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {DrawRacletteComponent} from './raclette/draw-raclette/draw-raclette.comp
     UserVoteComponent,
     RacletteComponent,
     BoardDisplayComponent,
-    DrawRacletteComponent
+    DrawRacletteComponent,
+    ClothesPipePipe
   ],
   imports: [
     BrowserModule,
