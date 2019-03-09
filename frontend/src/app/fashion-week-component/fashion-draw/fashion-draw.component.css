@@ -3,7 +3,19 @@
 }
 
 .image {
-  position: absolute;
   background-size:contain;
   background: no-repeat center;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+:host {
+  display: block;
+  height: 400px;
 }

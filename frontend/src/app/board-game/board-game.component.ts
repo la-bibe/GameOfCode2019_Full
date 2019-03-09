@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {CanvasComponent} from './canvas/canvas.component';
+import {GameService} from '../../services/game.service';
 
 @Component({
   selector: 'app-board-game',
@@ -9,11 +10,13 @@ import {CanvasComponent} from './canvas/canvas.component';
 export class BoardGameComponent implements OnInit {
   @ViewChild('canvas') public canvas: ElementRef;
 
-  private word_list = ['montains', 'T-shirt', 'glasses', 'bag', 'knife', 'bottle', 'cat', 'snake'];
   public word = '';
 
+  constructor(private gameService: GameService) {
+  }
+
   ngOnInit() {
-    this.word = this.word_list[Math.floor(Math.random() * 100) % this.word_list.length];
+    this.word = this.gameService.seed['word'];
   }
 
   getData() {

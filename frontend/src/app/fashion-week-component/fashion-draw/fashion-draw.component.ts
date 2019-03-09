@@ -1,7 +1,7 @@
 import {
   Component,
   ElementRef,
-  Input,
+  Input, OnInit,
   ViewChild
 } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';

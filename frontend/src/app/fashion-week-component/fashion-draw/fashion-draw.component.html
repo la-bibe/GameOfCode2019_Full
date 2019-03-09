@@ -1,9 +1,10 @@
-<div class="text-center h-100">
-  <div class="image h-100 w-100 d-block"
+<div class="text-center h-100 position-relative">
+  <div class="image cover"
        [style.background-image]="getBackground('assets/fashion_week/skin.png')">
   </div>
-  <div class="image h-100 w-100"
-       *ngFor="let image of drawables?.reverse()"
+  <div class="image cover"
+       *ngFor="let image of drawables?.reverse(); let i = index"
+       [style.z-index]="i"
        [style.background-image]="getBackground(image)">
   </div>
 </div>
