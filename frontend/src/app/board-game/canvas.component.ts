@@ -34,7 +34,7 @@ export class CanvasComponent implements AfterViewInit {
     this.captureEvents(canvasEl);
   }
 
-public export_canvas() {
+public getData() {
     return this.canvas.nativeElement.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
   }
 
