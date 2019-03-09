@@ -11,5 +11,4 @@ export class BoardGameComponent implements OnInit {
   ngOnInit() {
     this.word = this.word_list[Math.floor(Math.random() * 100) % this.word_list.length];
   }
-
 }

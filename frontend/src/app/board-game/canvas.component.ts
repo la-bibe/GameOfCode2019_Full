@@ -7,14 +7,14 @@ import { switchMap, takeUntil, pairwise } from 'rxjs/operators'
 @Component({
   selector: 'app-canvas',
   template: '<canvas #canvas></canvas>',
-  styles: ['canvas { border: 1px solid #000; }']
+  styles: ['canvas { border: 1px solid #000;}']
 })
 export class CanvasComponent implements AfterViewInit {
 
   @ViewChild('canvas') public canvas: ElementRef;
 
-  @Input() public width = 400;
-  @Input() public height = 400;
+   @Input() public width = 500;
+   @Input() public height = 500;
 
   private cx: CanvasRenderingContext2D;
 
@@ -22,14 +22,18 @@ export class CanvasComponent implements AfterViewInit {
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.cx = canvasEl.getContext('2d');
 
-    canvasEl.width = this.width;
-    canvasEl.height = this.height;
+//    canvasEl.width = this.width;
+ //   canvasEl.height = this.height;
 
     this.cx.lineWidth = 3;
     this.cx.lineCap = 'round';
     this.cx.strokeStyle = '#000';
 
     this.captureEvents(canvasEl);
+  }
+
+public export_canvas() {
+    return this.canvas.nativeElement.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
   }
 
   private captureEvents(canvasEl: HTMLCanvasElement) {
@@ -48,7 +52,7 @@ export class CanvasComponent implements AfterViewInit {
               // pairwise lets us get the previous value to draw a line from
               // the previous point to the current point
               pairwise()
-            )
+            );
         })
       )
       .subscribe((res: [MouseEvent, MouseEvent]) => {
