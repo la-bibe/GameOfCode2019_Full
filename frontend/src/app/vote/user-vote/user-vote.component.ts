@@ -1,4 +1,4 @@
-import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef, ViewRef} from '@angular/core';
+import {Component, ComponentFactoryResolver, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef} from '@angular/core';
 import {FashionDrawComponent} from '../../fashion-week-component/fashion-draw/fashion-draw.component';
 import {GameService} from '../../../services/game.service';
 
@@ -10,6 +10,8 @@ import {GameService} from '../../../services/game.service';
 export class UserVoteComponent implements OnInit {
 
   @Input() proposition: any;
+
+  @Output() vote: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild('display', {read: ViewContainerRef}) display: ViewContainerRef;
 
