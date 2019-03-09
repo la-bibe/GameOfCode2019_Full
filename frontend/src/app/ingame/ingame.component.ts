@@ -2,6 +2,7 @@ import {Component, ComponentFactoryResolver, ElementRef, OnInit, ViewChild, View
 import {GameService} from '../../services/game.service';
 import {FashionWeekComponent} from '../fashion-week-component/fashion-week.component';
 import {BoardGameComponent} from '../board-game/board-game.component';
+import {RacletteComponent} from '../raclette/raclette.component';
 
 @Component({
   selector: 'app-ingame',
@@ -18,7 +19,8 @@ export class IngameComponent implements OnInit {
 
   private games = {
     'fashion': FashionWeekComponent,
-    'board': BoardGameComponent
+    'board': BoardGameComponent,
+    'raclette': RacletteComponent
   };
 
   private game;

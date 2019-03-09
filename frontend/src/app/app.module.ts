@@ -56,8 +56,10 @@ import { ClothesPipePipe } from './clothes-pipe.pipe';
   entryComponents: [
     FashionWeekComponent,
     BoardGameComponent,
+    RacletteComponent,
     FashionDrawComponent,
-    BoardDisplayComponent
+    BoardDisplayComponent,
+    DrawRacletteComponent
   ]
 })
 export class AppModule {

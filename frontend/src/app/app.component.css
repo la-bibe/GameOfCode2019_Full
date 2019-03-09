@@ -1,8 +1,12 @@
 .background {
+  min-height: 100vh;
   z-index: -999;
   background: #7f53ac linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
 }
-
 
 .timer {
   position: fixed;

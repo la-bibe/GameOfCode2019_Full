@@ -8,8 +8,7 @@
   </ng-template>
   <div class="timer bg-light p-2 pl-3 rounded-right shadow text-center"
        [ngClass]="{'text-danger': gameService.timeLeft <= 5}"
-       *ngIf="gameService.state && (gameService.playing || gameService.spectating)">
-    <span class="mr-4 text-black">{{gameService.state}}</span>
+       *ngIf="gameService.timeLeft">
     <span class="text-black counter" *ngIf="gameService.timeLeft">{{gameService.timeLeft}}</span>
   </div>-->
   <app-raclette></app-raclette>
