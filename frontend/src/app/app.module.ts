@@ -19,7 +19,6 @@ import { UserVoteComponent } from './vote/user-vote/user-vote.component';
 import { RacletteComponent } from './raclette/raclette.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BoardDisplayComponent } from './board-game/board-display/board-display.component';
-import { DrawRacletteComponent } from './raclette/draw-raclette/draw-raclette.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { DrawRacletteComponent } from './raclette/draw-raclette/draw-raclette.co
     UserVoteComponent,
     RacletteComponent,
     BoardDisplayComponent,
-    DrawRacletteComponent,
   ],
   imports: [
     BrowserModule,
