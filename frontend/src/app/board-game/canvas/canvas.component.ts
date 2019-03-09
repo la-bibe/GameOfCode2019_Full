@@ -41,7 +41,7 @@ export class CanvasComponent implements AfterViewInit {
   }
 
 public getData() {
-    return this.canvas.nativeElement.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
+    return this.cx.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
   }
 
   private captureEvents(canvasEl: HTMLCanvasElement) {

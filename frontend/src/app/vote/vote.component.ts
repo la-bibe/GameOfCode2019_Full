@@ -8,8 +8,6 @@ import {GameService} from '../../services/game.service';
 })
 export class VoteComponent implements OnInit {
 
-  @Output() output: EventEmitter<any> = new EventEmitter<any>();
-
   constructor(public gameService: GameService) {
   }
 
