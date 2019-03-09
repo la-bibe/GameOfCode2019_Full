@@ -2,3 +2,17 @@
   z-index: -999;
   background: #7f53ac linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }
+
+
+.timer {
+  position: fixed;
+  min-width: 64px;
+  left: 0;
+  font-size: 1.5em;
+  top: 32px;
+  z-index: 999;
+}
+
+.counter {
+  min-width: 64px;
+}

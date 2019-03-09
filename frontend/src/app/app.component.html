@@ -1,9 +1,14 @@
 <div class="background h-100">
-<app-ingame *ngIf="gameService.playing; else spectate"></app-ingame>
+  <app-ingame *ngIf="gameService.playing; else spectate"></app-ingame>
   <ng-template #spectate>
     <app-spectate *ngIf="gameService.spectating; else menu"></app-spectate>
   </ng-template>
   <ng-template #menu>
     <app-main-menu></app-main-menu>
   </ng-template>
+  <div class="timer bg-light p-2 pl-3 rounded-right shadow text-center"
+       [ngClass]="{'text-danger': gameService.timeLeft <= 5}" *ngIf="gameService.state">
+    <span class="mr-4 text-black">{{gameService.state}}</span>
+    <span class="text-black counter" *ngIf="gameService.timeLeft">{{gameService.timeLeft}}</span>
+  </div>
 </div>

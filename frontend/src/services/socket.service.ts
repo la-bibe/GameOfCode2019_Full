@@ -22,7 +22,6 @@ export class SocketService {
     this.socket.addEventListener('message', (e) => {
       // @ts-ignore
       const event = JSON.parse(e.data);
-      console.log('EVENT: ' + e.data);
       if (this.handler.has(event.type)) {
         this.handler.get(event.type).forEach((handler) => handler(event.payload));
       }

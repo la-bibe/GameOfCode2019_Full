@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {SocketService} from './socket.service';
 import {UserModel} from '../models/user-model';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,31 +11,54 @@ export class GameService {
   playing: boolean;
   spectating: boolean;
 
+  gameStarted: boolean;
+
+  game: string;
+
   id: number;
   name: string;
+
+  state: string;
 
   // @ts-ignore
   players: Array<UserModel> = [];
 
   player: UserModel;
 
+  timeLeft: number;
+
   messageEmitter: Subject<any>;
+  gameLaunchEmitter: Subject<any>;
+  changeStateEmitter: Subject<any>;
+
+  propositions = [];
 
   constructor(private socketService: SocketService) {
 
-    this.messageEmitter = new Subject();
+    this.messageEmitter = new Subject<any>();
+    this.gameLaunchEmitter = new Subject<any>();
+    this.changeStateEmitter = new Subject<any>();
 
     socketService.initSocket();
 
     socketService.on('newPlayer', (data) => this.onNewPlayer(data));
     socketService.on('playerLeave', (data) => this.onPlayerLeave(data));
     socketService.on('welcome', (data) => this.onWelcome(data));
-    socketService.on('message', (data => this.onMessage(data)));
+    socketService.on('message', (data) => this.onMessage(data));
+    socketService.on('launchGame', (data) => this.onLaunchGame(data));
+    socketService.on('changeState', (data) => this.onChangeState(data));
+    socketService.on('timeLeft', (data) => this.onTimeLeft(data));
+    socketService.on('propositions', (data) => {
+      this.propositions = data;
+    });
+  }
+
+  private onTimeLeft(data) {
+    this.timeLeft = data.value;
   }
 
   private onNewPlayer(playerData) {
     this.players.push(playerData);
-    console.log('ID = ' + playerData.id + ' <> ' + this.id);
     if (playerData.id === this.id) {
       this.player = playerData;
     } else {
@@ -43,8 +66,13 @@ export class GameService {
     }
   }
 
+  private onChangeState(state) {
+    this.state = state.state;
+    this.changeStateEmitter.next(state.state);
+  }
+
   private onWelcome(tournamentData) {
-    this.players = tournamentData.tournament.players.data;
+    this.players = tournamentData.tournament.players;
     this.id = tournamentData.self.id;
     this.name = tournamentData.self.name;
   }
@@ -53,8 +81,14 @@ export class GameService {
     this.players = this.players.filter(p => p.id !== playerData.id);
   }
 
-  private onMessage(message: string) {
+  private onMessage(message) {
     this.messageEmitter.next(message);
+  }
+
+  private onLaunchGame(data) {
+    this.game = data.name;
+    this.gameStarted = true;
+    this.gameLaunchEmitter.next(data);
   }
 
   play() {
@@ -81,5 +115,14 @@ export class GameService {
     setTimeout(() => {
       p.emote = null;
     }, timeout);
+  }
+
+  submit(data: any = {}) {
+    this.gameStarted = false;
+    this.socketService.send('play', {data: data});
+  }
+
+  vote(id: number) {
+    this.socketService.send('vote', {id: id});
   }
 }

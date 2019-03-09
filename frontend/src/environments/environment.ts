@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'ws://192.168.43.78:8080'
+  serverUrl: 'ws://party.bib.as:8080'
 };
 
 /*

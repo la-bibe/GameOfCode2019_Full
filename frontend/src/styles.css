@@ -5,6 +5,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.text-black {
+  font-weight: 900;
+}
+
 .cursor-pointer {
   cursor: pointer !important;
 }

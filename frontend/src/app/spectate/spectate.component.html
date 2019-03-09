@@ -1,9 +1,17 @@
-<div class="container-fluid text-center py-5 h-100">
-  <div class="d-flex flex-wrap justify-content-around align-items-center h-100">
-    <div class="col-6 col-sm-3" *ngFor="let user of this.gameService.players | orderByScore; let i = index">
-      <app-user [user]="user" [rank]="i + 1" class="my-5 d-inline" [ngClass]="{'bg-light': this.gameService.id === user.id}"></app-user>
+<div *ngIf="gameService.state !== 'vote'; else vote" class="h-100">
+  <div class="container-fluid text-center py-5 h-100">
+    <div class="d-flex flex-wrap justify-content-around align-items-center h-100">
+      <h1 *ngIf="this.gameService.players.length === 0" class="text-light text-black">Waiting for players</h1>
+      <div class="col-6 col-sm-3"
+           *ngFor="let user of this.gameService.players | orderByScore; let i = index">
+        <app-user [user]="user" [rank]="i + 1" class="my-5 d-inline"
+                  [ngClass]="{'bg-light': this.gameService.id === user.id}"></app-user>
+      </div>
     </div>
   </div>
+  <app-reaction-menu class="reactions"></app-reaction-menu>
+  <app-reaction *ngFor="let r of reactions" [type]="r" (die)="removeReaction(r)"></app-reaction>
 </div>
-<app-reaction-menu class="reactions"></app-reaction-menu>
-<app-reaction *ngFor="let r of reactions" [type]="r" (die)="removeReaction(r)"></app-reaction>
+<ng-template #vote>
+  <app-vote></app-vote>
+</ng-template>

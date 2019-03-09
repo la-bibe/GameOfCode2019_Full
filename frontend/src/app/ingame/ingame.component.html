@@ -1,1 +1,8 @@
-<app-spectate></app-spectate>
+<app-spectate *ngIf="!gameService.gameStarted; else ingame"></app-spectate>
+<template #game>
+</template>
+<ng-template #ingame>
+  <div class="submit">
+    <a class="btn btn-light shadow cursor-pointer shadow" (click)="submitWork()">SUBMIT</a>
+  </div>
+</ng-template>

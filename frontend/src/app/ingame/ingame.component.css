@@ -1,0 +1,6 @@
+.submit {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 999;
+}

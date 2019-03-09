@@ -18,7 +18,7 @@ export class FashionWeekComponent implements OnInit {
   ready = false;
 
   constructor(private fashionWeekService: FashionWeekService) {
-    this.height = window.innerHeight;
+    this.height = window.innerHeight * 0.75;
     this.width = window.innerWidth;
   }
 

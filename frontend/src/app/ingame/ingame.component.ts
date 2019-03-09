@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ComponentFactoryResolver, ElementRef, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {GameService} from '../../services/game.service';
-import {Router} from '@angular/router';
+import {FashionWeekComponent} from '../fashion-week-component/fashion-week.component';
+import {BoardGameComponent} from '../board-game/board-game.component';
 
 @Component({
   selector: 'app-ingame',
@@ -9,13 +10,37 @@ import {Router} from '@angular/router';
 })
 export class IngameComponent implements OnInit {
 
-  constructor(public gameService: GameService, private router: Router) {
+  private container;
+
+  @ViewChild('game', {read: ViewContainerRef}) set gameContainer(container: ElementRef) {
+    this.container = container;
+  }
+
+  private games = {
+    'fashion': FashionWeekComponent,
+    'board': BoardGameComponent
+  };
+
+  private game;
+
+  constructor(public gameService: GameService, private resolver: ComponentFactoryResolver) {
   }
 
   ngOnInit() {
-    if (!this.gameService.playing) {
-      this.router.navigateByUrl('/').catch();
-    }
+    this.gameService.gameLaunchEmitter.subscribe(game => {
+      this.container.clear();
+      const fact = this.resolver.resolveComponentFactory(this.games[game.name]);
+      this.game = this.container.createComponent(fact).instance;
+    });
+    this.gameService.changeStateEmitter.subscribe(state => {
+      if (state !== 'game') {
+        this.container.clear();
+      }
+    });
+  }
+
+  public submitWork() {
+    this.gameService.submit(this.game.getData());
   }
 
 }

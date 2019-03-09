@@ -14,6 +14,8 @@ import {ReactionMenuComponent} from './reaction-menu/reaction-menu.component';
 import {ReactionComponent} from './reaction/reaction.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ArrowComponent} from './fashion-week-component/left-arrow/arrow.component';
+import { VoteComponent } from './vote/vote.component';
+import { UserVoteComponent } from './vote/user-vote/user-vote.component';
 import { RacletteComponent } from './raclette/raclette.component';
 import {DndModule} from 'ngx-drag-drop';
 
@@ -34,6 +36,8 @@ import {DndModule} from 'ngx-drag-drop';
     OrderByScorePipe,
     BoardGameComponent,
     CanvasComponent,
+    VoteComponent,
+    UserVoteComponent,
     RacletteComponent,
   ],
   imports: [
@@ -42,7 +46,12 @@ import {DndModule} from 'ngx-drag-drop';
     DndModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    FashionWeekComponent,
+    BoardGameComponent,
+    FashionDrawComponent
+  ]
 })
 export class AppModule {
 }

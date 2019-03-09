@@ -1,0 +1,4 @@
+<div class="container text-center py-5 h-100 d-flex justify-content-around">
+  <app-user-vote *ngFor="let p of gameService.propositions" [proposition]="p" class="d-block"></app-user-vote>
+  <a class="mt-3" (click)="output.emit()">vote</a>
+</div>
