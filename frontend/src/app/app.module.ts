@@ -7,7 +7,7 @@ import {SpectateComponent} from './spectate/spectate.component';
 import {UserComponent} from './user/user.component';
 import {OrderByScorePipe} from './order-by-score.pipe';
 import {FashionDrawComponent} from './fashion-week-component/fashion-draw/fashion-draw.component';
-import {CanvasComponent} from './board-game/canvas.component';
+import {CanvasComponent} from './board-game/canvas/canvas.component';
 import {BoardGameComponent} from './board-game/board-game.component';
 import {IngameComponent} from './ingame/ingame.component';
 import {ReactionMenuComponent} from './reaction-menu/reaction-menu.component';
