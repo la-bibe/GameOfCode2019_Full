@@ -11,6 +11,8 @@ import {UserComponent} from './user/user.component';
 import { OrderByScorePipe } from './order-by-score.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { FashionDrawComponent } from './fashion-week-component/fashion-draw/fashion-draw.component';
+import { CanvasComponent } from './board-game/canvas.component';
+import {BoardGameComponent} from './board-game/board-game.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FashionDrawComponent } from './fashion-week-component/fashion-draw/fash
     UserComponent,
     OrderByScorePipe,
     FashionDrawComponent,
-    OrderByScorePipe
+    OrderByScorePipe,
+    BoardGameComponent,
+    CanvasComponent
   ],
   imports: [
     BrowserModule,
