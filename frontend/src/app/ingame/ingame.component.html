@@ -1,4 +1,4 @@
-<app-spectate *ngIf="!gameService.gameStarted; else ingame"></app-spectate>
+<app-spectate *ngIf="gameService.state !== 'game'; else ingame"></app-spectate>
 <template #game>
 </template>
 <ng-template #ingame>

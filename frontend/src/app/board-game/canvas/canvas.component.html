@@ -1,8 +1,12 @@
-<canvas #canvas></canvas>
-<br>
-<button (click)="this.clear()" class="btn-primary rounded align-content-center">Clear</button>
-<br>
-<button (click)="this.setColor('black')" class="btn-primary">Black</button>
-<button (click)="this.setColor('red')" class="btn-primary">Red</button>
-<button (click)="this.setColor('blue')" class="btn-primary rounded align-content-center">Blue</button>
-<button (click)="this.setColor('green')" class="btn-primary rounded align-content-center">Green</button>
+<div class="flex-column justify-content-center p-5 align-items-center align-content-center shadow bg-light">
+  <div class="text-center">
+    <canvas #canvas class="mx-auto"></canvas>
+  </div>
+  <a (click)="this.clear()" class="btn shadow btn-warning w-100 my-3">Clear</a>
+  <div class="d-flex justify-content-between align-items-stretch">
+    <a (click)="this.setColor('black')" class="btn shadow btn-dark text-light ">Black</a>
+    <a (click)="this.setColor('red')" class="btn shadow btn-danger text-light ">Red</a>
+    <a (click)="this.setColor('blue')" class="btn shadow btn-primary text-light ">Blue</a>
+    <a (click)="this.setColor('green')" class="btn shadow btn-success text-light ">Green</a>
+  </div>
+</div>

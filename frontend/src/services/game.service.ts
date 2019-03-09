@@ -11,14 +11,16 @@ export class GameService {
   playing: boolean;
   spectating: boolean;
 
-  gameStarted: boolean;
-
   game: string;
+
+  size: number;
 
   id: number;
   name: string;
 
   state: string;
+
+  seed = {};
 
   // @ts-ignore
   players: Array<UserModel> = [];
@@ -51,6 +53,9 @@ export class GameService {
     socketService.on('propositions', (data) => {
       this.propositions = data;
     });
+    socketService.on('updatePlayerRanking', (data) => {
+      this.players = data;
+    });
   }
 
   private onTimeLeft(data) {
@@ -73,6 +78,11 @@ export class GameService {
 
   private onWelcome(tournamentData) {
     this.players = tournamentData.tournament.players;
+    this.size = tournamentData.tournament.size;
+    this.state = tournamentData.tournament.state;
+    if (tournamentData.tournament.game) {
+      this.game = tournamentData.tournament.game.name;
+    }
     this.id = tournamentData.self.id;
     this.name = tournamentData.self.name;
   }
@@ -87,7 +97,7 @@ export class GameService {
 
   private onLaunchGame(data) {
     this.game = data.name;
-    this.gameStarted = true;
+    this.seed = data.seed;
     this.gameLaunchEmitter.next(data);
   }
 
@@ -118,11 +128,12 @@ export class GameService {
   }
 
   submit(data: any = {}) {
-    this.gameStarted = false;
     this.socketService.send('play', {data: data});
+    this.state = 'waiting';
   }
 
   vote(id: number) {
     this.socketService.send('vote', {id: id});
+    this.state = 'waiting';
   }
 }
