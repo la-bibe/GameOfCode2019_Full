@@ -7,6 +7,6 @@ import {GameService} from '../services/game.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public gameService: GameService) {
+  constructor(/*public gameService: GameService*/) {
   }
 }

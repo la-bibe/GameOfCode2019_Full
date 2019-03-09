@@ -1,17 +1,19 @@
 <div class="arrow-left" *ngIf="selectedClothes">
-  <div *ngFor="let clotheType of clothes; let i = index" class="row" [style.height.px]="height/clothes.length">
-    <app-arrow class="h-100 w-100" (clicked)="selectNext(i)"></app-arrow>
+  <div *ngFor="let clotheType of clothes; let i = index" [style.height.px]="height/clothes.length">
+    <app-arrow [height]="height/clothes.length" (clicked)="selectNext(i)"></app-arrow>
   </div>
 </div>
 
 <div *ngIf="selectedClothes && ready">
-  <app-fashion-draw [width]="width" [height]="height" [drawables]="selectedClothes"></app-fashion-draw>
+  <app-fashion-draw [width]="width"
+                    [height]="height"
+                    [drawables]="selectedClothes"></app-fashion-draw>
 </div>
 
 <div class="arrow-right">
   <div *ngIf="selectedClothes">
-    <div *ngFor="let clotheType of clothes; let i = index" class="row" [style.height.px]="height/clothes.length">
-      <app-arrow class="h-100 w-100"  [left]="false" (clicked)="selectPrev(i)"></app-arrow>
+    <div *ngFor="let clotheType of clothes; let i = index" [style.height.px]="height/clothes.length">
+      <app-arrow [height]="height/clothes.length" [left]="false" (clicked)="selectPrev(i)"></app-arrow>
     </div>
   </div>
 </div>
