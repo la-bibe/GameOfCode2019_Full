@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {FashionWeekService} from '../../services/fashion-week.service';
 import {ClotheType} from '../../models/fashion-week/clothe-type';
 import {Clothe} from '../../models/fashion-week/clothe';
@@ -11,10 +11,21 @@ import {Clothe} from '../../models/fashion-week/clothe';
 export class FashionWeekComponent implements OnInit {
 
   clothes: ClotheType[];
-
   selectedClothes: Clothe[];
 
-  constructor(private fashionWeekService: FashionWeekService) { }
+  width: any;
+  height: any;
+
+  constructor(private fashionWeekService: FashionWeekService) {
+    this.height = window.screen.height;
+    this.width = window.screen.width;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.height = event.target.innerHeight;
+    this.width = event.target.innerWidth;
+  }
 
   ngOnInit() {
     this.getClothes();
@@ -25,7 +36,7 @@ export class FashionWeekComponent implements OnInit {
       data => {
         this.clothes = data;
         this.initSelectedClothes();
-        },
+      },
       error => console.log(error)
     );
   }
@@ -35,5 +46,9 @@ export class FashionWeekComponent implements OnInit {
     for (let i = 0; i < this.clothes.length; i++) {
       this.selectedClothes.push(this.clothes[i].clothes[0]);
     }
+  }
+
+  aled() {
+    console.log(this.selectedClothes);
   }
 }

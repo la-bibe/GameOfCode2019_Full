@@ -21,6 +21,7 @@ export class FashionScrollComponent implements OnInit {
   }
 
   emit() {
+    console.log('aled');
     this.selected = this.clotheType.clothes[this.id % this.clotheType.clothes.length];
     this.selectedChange.emit(this.selected);
   }
