@@ -1,0 +1,292 @@
+[
+  {
+    "name": "pants",
+    "icon": "",
+    "clothes": [
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 1,
+          "y": 1
+        },
+        "parts": [
+          {
+            "path": "Pants/Blue1/pantsBlue1_short.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Pants/Blue1/pantsBlue1_short.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 1,
+          "y": 1
+        },
+        "parts": [
+          {
+            "path": "Pants/Blue1/pantsBlue1_long.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Pants/Blue1/pantsBlue1_long.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 1,
+          "y": 1
+        },
+        "parts": [
+          {
+            "path": "Pants/Blue2/pantsBlue2_short.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Pants/Blue2/pantsBlue2_short.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 1,
+          "y": 1
+        },
+        "parts": [
+          {
+            "path": "Pants/Blue2/pantsBlue2_long.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Pants/Blue2/pantsBlue2_long.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "sleeves",
+    "icon": "",
+    "clothes": [
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 0,
+          "y": 0
+        },
+        "parts": [
+          {
+            "path": "Shirts/Blue/blueArm_long.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Shirts/Blue/blueArm_long.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 0,
+          "y": 0
+        },
+        "parts": [
+          {
+            "path": "Shirt/Blue/blueArm_short.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Shirt/Blue/BlueArm_short.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "shoes",
+    "icon": "",
+    "clothes": [
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 0,
+          "y": 0
+        },
+        "parts": [
+          {
+            "path": "Shoes/Black/blackShoe1.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Shoes/Black/blackShoe1.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "x": 0,
+          "y": 0
+        },
+        "parts": [
+          {
+            "path": "Shoes/Black/blackShoe2.png",
+            "pos": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "x": -0.5,
+              "y": 1
+            }
+          },
+          {
+            "path": "Shoes/Black/blackShoe2.png",
+            "pos": {
+              "x": 0.5,
+              "y": 0
+            },
+            "size": {
+              "x": 0.5,
+              "y": 1
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
